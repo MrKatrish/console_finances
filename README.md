@@ -14,7 +14,7 @@ To run this project locally, follow these steps:
 
 2. Open the index.html file in your preferred web browser.
 
-3. In ChromeDevTools check console.
+3. for example - In ChromeDevTools check console.
 
 ## Screenshots
 
@@ -28,3 +28,6 @@ Thanks to TAs and Instructors for explaining all and research on this site https
 
 ## License
 This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Skills used
+JavaScript and HTML5
