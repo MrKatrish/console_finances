@@ -91,18 +91,19 @@ var finances = [
 
 // Function to calculate financial analysis
 function calculateFinancialAnalysis(data) {
-  let totalMonths = data.length;
-  let totalProfitLoss = 0;
-  let totalChange = 0;
-  let greatestIncrease = { date: "", amount: -Infinity };
-  let greatestDecrease = { date: "", amount: Infinity };
+  var totalMonths = data.length;
+  var totalProfitLoss = 0;
+  var totalChange = 0;
+  var greatestIncrease = { date: "", amount: -Infinity };
+  var greatestDecrease = { date: "", amount: Infinity };
 
-  for (let i = 0; i < data.length; i++) {
-    const [date, profitLoss] = data[i];
+  for (var i = 0; i < data.length; i++) {
+    var date = data[i][0];
+    var profitLoss = data[i][1];
     totalProfitLoss += profitLoss;
 
     if (i > 0) {
-      const change = profitLoss - data[i - 1][1];
+      var change = profitLoss - data[i - 1][1];
       totalChange += change;
 
       if (change > greatestIncrease.amount) {
@@ -117,19 +118,27 @@ function calculateFinancialAnalysis(data) {
     }
   }
 
-  const averageChange = totalChange / (totalMonths - 1);
+  var averageChange = totalChange / (totalMonths - 1);
 
   // Print the analysis to the console
   console.log("Financial Analysis");
   console.log("------------------");
-  console.log(`Total Months: ${totalMonths}`);
-  console.log(`Total: $${totalProfitLoss}`);
-  console.log(`Average Change: $${averageChange.toFixed(2)}`);
+  console.log("Total Months: " + totalMonths);
+  console.log("Total: $" + totalProfitLoss);
+  console.log("Average Change: $" + averageChange.toFixed(2));
   console.log(
-    `Greatest Increase in Profits/Losses: ${greatestIncrease.date} ($${greatestIncrease.amount})`
+    "Greatest Increase in Profits/Losses: " +
+      greatestIncrease.date +
+      " ($" +
+      greatestIncrease.amount +
+      ")"
   );
   console.log(
-    `Greatest Decrease in Profits/Losses: ${greatestDecrease.date} ($${greatestDecrease.amount})`
+    "Greatest Decrease in Profits/Losses: " +
+      greatestDecrease.date +
+      " ($" +
+      greatestDecrease.amount +
+      ")"
   );
 }
 
